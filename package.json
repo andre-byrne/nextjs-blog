@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@edvisor/product-language": "^0.10.28",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
