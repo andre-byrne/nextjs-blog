@@ -1,16 +1,32 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import styled from "styled-components";
 
 const name = 'Your Name';
 export const siteTitle = 'Next.js Sample Website';
 
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Container = styled.div`
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+`
+
+const BackToHome = styled.div`
+  margin: 3rem 0 0;
+`
+
 export default function Layout(props: { home?: boolean, children?: any } = { home: false }) {
   const { home, children } = props
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -26,7 +42,7 @@ export default function Layout(props: { home?: boolean, children?: any } = { hom
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <Header>
         {home ? (
           <>
             <Image
@@ -58,13 +74,13 @@ export default function Layout(props: { home?: boolean, children?: any } = { hom
             </h2>
           </>
         )}
-      </header>
+      </Header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <BackToHome>
           <Link href="/">← Back to home</Link>
-        </div>
+        </BackToHome>
       )}
-    </div>
+    </Container>
   );
 }
