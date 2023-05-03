@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@edvisor/product-language": "^0.10.28",
@@ -17,9 +19,19 @@
     "styled-components": "^5.3.10"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.8",
+    "@storybook/addon-interactions": "^7.0.8",
+    "@storybook/addon-links": "^7.0.8",
+    "@storybook/blocks": "^7.0.8",
+    "@storybook/nextjs": "^7.0.8",
+    "@storybook/react": "^7.0.8",
+    "@storybook/react-webpack5": "^7.0.8",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/node": "18.16.3",
     "@types/react": "18.2.0",
     "@types/styled-components": "^5.1.26",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.8",
     "typescript": "5.0.4"
   }
 }
