@@ -7,4 +7,11 @@ module.exports = {
   env: {
     EDVISOR_I18N_URL: 'http://127.0.0.1:4001',
   },
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  },
+  experimental: {
+    appDir: true
+  }
 }
