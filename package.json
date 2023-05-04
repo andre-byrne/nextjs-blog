@@ -10,10 +10,15 @@
   "dependencies": {
     "@edvisor/product-language": "^0.10.28",
     "date-fns": "^2.30.0",
+    "graphql": "^16.6.0",
     "gray-matter": "^4.0.3",
+    "i18next": "^22.4.15",
+    "i18next-http-backend": "^2.2.0",
     "next": "latest",
     "react": "18.2.0",
+    "@apollo/client": "^3.7.13",
     "react-dom": "18.2.0",
+    "react-i18next": "^12.2.2",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2",
     "styled-components": "^5.3.10"

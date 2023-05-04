@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import utilStyles from '../../styles/utils.module.css';
 import Head from 'next/head';
 import { Body } from '@edvisor/product-language'
+import { T } from '../../lib/i18n';
 
 export async function getStaticProps({ params }) {
   // Add the "await" keyword like this:
@@ -35,6 +36,7 @@ export default function Post({ postData }) {
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
+        <T>GLOBAL.CANCEL</T>
         <Body dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
