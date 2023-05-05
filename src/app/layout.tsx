@@ -1,11 +1,5 @@
-import { Header } from "./Header";
-import { I18n } from "./I18n";
-
-const styles = {
-  display: "grid",
-  gridTemplateColumns: "repeat(12, 1fr)",
-  gap: "24px",
-};
+import StyledComponentsRegistry from "../lib/registry";
+import { Contents } from "./Contents";
 
 export default function RootLayout({
   children,
@@ -15,11 +9,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <I18n/>
-        <Header />
-        <div style={styles}>
-          {children}
-        </div>
+        <StyledComponentsRegistry>
+          <Contents>{children}</Contents>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
