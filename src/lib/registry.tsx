@@ -15,6 +15,9 @@ export default function StyledComponentsRegistry({
  
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
+    // clearTag is not exposed in the API
+    // @see: https://github.com/vercel/next.js/issues/42526
+    // @ts-ignore
     styledComponentsStyleSheet.instance.clearTag();
     return <>{styles}</>;
   });

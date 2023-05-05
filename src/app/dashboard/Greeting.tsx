@@ -1,8 +1,8 @@
 'use client'
 
-import { Button, Display, Flex, Interactive, Margin } from "@edvisor/product-language"
-import { useRouter } from "next/navigation"
+import { BodyLarge, Button, Display, Flex, Interactive, Margin, Text } from "@edvisor/product-language"
 import styled, { css } from "styled-components"
+import { UpcomingTrips } from "./UpcomingTrips"
 
 const Frame = styled(Flex)`
   padding-top: 160px;
@@ -19,7 +19,7 @@ const Hero = css`
 
 const Title = styled(Display)`
   text-align: center;
-  margin-bottom: ${Margin.xxl};
+  margin-bottom: ${Margin.l};
 
   @media (min-width: 1040px) {
     ${Hero}
@@ -30,15 +30,17 @@ const Title = styled(Display)`
   }
 `
 
-export function Greeting () {
-  const router = useRouter();
+const Description = styled(BodyLarge)`
+  margin-bottom: 96px;
+`
 
+export function Greeting () {
   return (
     <Frame>
       <Title>
-        Welcome to your<br /><strong>student portal</strong>
+        Hello User, welcome to your <strong>student portal</strong>
       </Title>
-      <Button primary onClick={() => router.push('/dashboard')}>Login</Button>
+      <Description subdued>Here you can update your profile, upload files, and manage your trips.</Description>
     </Frame>
   )
 }

@@ -1,5 +1,6 @@
 import StyledComponentsRegistry from "../lib/registry";
-import { Contents } from "./Contents";
+import { Grid } from "./Grid";
+import { Header } from "./Header";
 
 export default function RootLayout({
   children,
@@ -10,7 +11,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StyledComponentsRegistry>
-          <Contents>{children}</Contents>
+          <>
+            <Header />
+            <Grid>{children}</Grid>
+          </>
         </StyledComponentsRegistry>
       </body>
     </html>

@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 const Frame = styled(SpaceBetween)`
   padding: ${Margin.s} ${Margin.xl};
-  
 `
 
 export function Header () {
