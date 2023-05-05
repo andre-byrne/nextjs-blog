@@ -2,7 +2,7 @@
 
 import { Badge, Flex, Gap, Label, Padding, Surface } from "@edvisor/product-language"
 import styled from "styled-components"
-import { isDefined } from "../lib/safe-navigation"
+import { isDefined, safeCallback } from "../lib/safe-navigation"
 
 const Frame = styled.button`
   // button reset
@@ -10,6 +10,7 @@ const Frame = styled.button`
   background-color: ${Surface.Default.Default};
   outline: none;
 
+  cursor: pointer;
   display: flex;
   align-items: center;
   padding: ${Padding.xs} ${Padding.m};
@@ -33,11 +34,12 @@ const Frame = styled.button`
 interface INavigationItemProps {
   label: string
   value?: number
+  onClick?: () => void
 }
 
 export function NavigationItem (props: INavigationItemProps) {
   return (
-    <Frame>
+    <Frame onClick={() => safeCallback(props.onClick)}>
       <Label strong>{props.label}</Label>
       {isDefined(props.value) ? <Badge>{props.value}</Badge> : null}
     </Frame>

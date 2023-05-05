@@ -61,3 +61,13 @@ export function toArray <T>(value: T | T[] | undefined): T[] {
   }
   return Array.isArray(value) ? value : [value]
 }
+
+export function safeCallback <T>(f?: (e: T) => void, e?: T) {
+  if (isDefined(f)) {
+    if (isDefined(e)) {
+      f(e)
+    } else {
+      (f as () => void)()
+    }
+  }
+}

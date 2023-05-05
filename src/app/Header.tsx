@@ -1,12 +1,14 @@
 'use client'
 
-import { Button, Flex, Gap, IconMinor, Margin, SpaceBetween, Thumbnail } from "@edvisor/product-language";
-import { usePathname } from "next/navigation";
+import { Button, Flex, Gap, IconMinor, Margin, SpaceBetween, Surface, Thumbnail } from "@edvisor/product-language";
+import { usePathname, useRouter } from "next/navigation";
 import styled from "styled-components";
 import { NavigationItem } from "./NavigationItem";
 
 const Nav = styled.div`
-  position: fixed;
+  position: sticky;
+  background-color: ${Surface.Default.Default};
+  top: 0px;
   width: 100%;
 `
 
@@ -33,7 +35,8 @@ const Menu = styled(Flex)`
 `
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname()
+  const router = useRouter()
 
   return (
     <Nav>
@@ -46,12 +49,22 @@ export function Header() {
         </Flex>
         {isLogin(pathname) ? null : (
           <Menu>
-            <NavigationItem label="Home" />
+            <NavigationItem
+              label="Home"
+              onClick={() => router.push("/dashboard")}
+            />
             <NavigationItem label="Trips" />
             <NavigationItem label="Files" value={1} />
           </Menu>
         )}
-        {isLogin(pathname) ? null : <div>Profile</div>}
+        {isLogin(pathname) ? null : (
+          <div
+            style={{ cursor: "pointer" }}
+            onClick={() => router.push("/profile")}
+          >
+            Profile
+          </div>
+        )}
       </Frame>
     </Nav>
   );

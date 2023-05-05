@@ -14,9 +14,7 @@ export default function RootLayout({
           <>
             <Header />
             <Grid>
-              <Content>
-                {children}
-              </Content>
+              {children}
             </Grid>
           </>
         </StyledComponentsRegistry>
