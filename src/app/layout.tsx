@@ -1,5 +1,5 @@
 import StyledComponentsRegistry from "../lib/registry";
-import { Grid } from "./Grid";
+import { Content, Grid } from "./Grid";
 import { Header } from "./Header";
 
 export default function RootLayout({
@@ -9,11 +9,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ margin: '0px' }}>
         <StyledComponentsRegistry>
           <>
             <Header />
-            <Grid>{children}</Grid>
+            <Grid>
+              <Content>
+                {children}
+              </Content>
+            </Grid>
           </>
         </StyledComponentsRegistry>
       </body>
